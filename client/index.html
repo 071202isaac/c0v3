@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>C0nsume.me</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="game-canvas"></canvas>
+
+<!-- Score (top-left) -->
+<div id="score-box" class="hud-box hidden">Score: <span id="score-value">0</span></div>
+
+<!-- Leaderboard (top-right) -->
+<div id="leaderboard-box" class="hud-box hidden">
+  <div id="leaderboard-title">Leaderboard</div>
+  <ol id="leaderboard-list"></ol>
+</div>
+
+<!-- Chat (bottom-left) -->
+<div id="chat-box" class="hidden">
+  <div id="chat-messages"></div>
+  <input id="chat-input" type="text" maxlength="50" placeholder="Press Enter to write, [max 50 characters]">
+</div>
+
+<!-- Find player controls (bottom-center, visible while playing) -->
+<div id="spectate-bar" class="hidden">
+  <select id="find-player">
+    <option value="-1">-- Find Player --</option>
+  </select>
+  <button id="cancel-spectate">Dejar de buscar</button>
+</div>
+
+<!-- Start screen -->
+<div id="start-screen">
+  <div id="start-panel">
+    <div id="game-title">C0nsume<span>.me</span></div>
+    <input id="nick-input" type="text" maxlength="15" placeholder="Nombre" autocomplete="off">
+    <button id="play-button">Jugar</button>
+    <div id="start-settings">
+      <label class="toggle-row"><input type="checkbox" id="dark-mode-toggle"> Modo oscuro</label>
+      <label class="toggle-row"><input type="checkbox" id="hide-names-toggle"> Jugar sin nombres</label>
+    </div>
+    <div id="connection-status"></div>
+  </div>
+</div>
+
+<!-- Alert popup (server SendAlert messages) -->
+<div id="alert-box" class="hidden"></div>
+
+<script src="js/protocol.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
